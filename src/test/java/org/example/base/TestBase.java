@@ -8,10 +8,11 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
 
-    protected static RequestSpecification spec;
+    public static RequestSpecification spec;
 
     @BeforeAll
     static void setup() {
+        RestAssured.useRelaxedHTTPSValidation();
         spec = new RequestSpecBuilder()
                 .setBaseUri("https://dummyjson.com")
                 .setContentType(ContentType.JSON)

@@ -7,6 +7,7 @@ import static org.hamcrest.Matchers.*;
 
 public class ProductsTests extends TestBase {
 
+
     @Test
     void getProducts_shouldReturn200_andHaveProductsArray() {
         given()
