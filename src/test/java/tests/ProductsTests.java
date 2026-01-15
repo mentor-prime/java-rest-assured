@@ -2,7 +2,6 @@ package tests;
 
 import org.example.base.TestBase;
 import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
@@ -77,6 +76,27 @@ public class ProductsTests extends TestBase {
                         .statusCode(200)
                         .extract()
                         .response();
+
+        // Extract titles
+        var titles = response.jsonPath().getList("products.title");
+
+        System.out.println("=== PRODUCT TITLES ===");
+        titles.forEach(System.out::println);
+    }
+
+    @Test
+    void getProducts_withoutSpec_shouldReturn200_andHaveProductsArray() {
+
+        var response = given().baseUri("https://dummyjson.com")
+                .baseUri("https://dummyjson.com")
+                .header("Content-Type", "application/json")
+                .when()
+                .get("products/")
+                .then()
+                        .statusCode(200)
+                .statusCode(200)
+                .extract()
+                .response();
 
         // Extract titles
         var titles = response.jsonPath().getList("products.title");
