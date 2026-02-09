@@ -1,4 +1,4 @@
-package tests;
+package tests.Products;
 
 import org.example.base.TestBase;
 import org.junit.jupiter.api.Test;
