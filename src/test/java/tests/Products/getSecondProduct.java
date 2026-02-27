@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.isEmptyOrNullString;
 
 public class getSecondProduct extends TestBase {
     @Test
-    void getSingleProduct_shouldReturnProduct1() {
+    void getSecondProduct_shouldReturnProduct2() {
 
         var response = given()
                 .spec(spec)
