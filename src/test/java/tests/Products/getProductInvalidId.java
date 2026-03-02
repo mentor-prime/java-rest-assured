@@ -18,4 +18,15 @@ public class getProductInvalidId extends TestBase {
                 .then()
                 .statusCode(404);
     }
+
+    @Test
+    void getProductInvalidID2() {
+        given()
+                .spec(spec)
+                .when()
+                .get("/products/x1")
+                .then()
+                .statusCode(404)
+                .body("error", not(equalTo("Internal Server Error")));
+    }
 }
