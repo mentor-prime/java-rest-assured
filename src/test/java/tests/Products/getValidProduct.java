@@ -30,4 +30,15 @@ public class getValidProduct extends TestBase {
                 .statusCode(not(404))
                 .body("error", not(equalTo("Internal Server Error")));
     }
+
+    @Test
+    void getValidProduct3() {
+        given()
+                .spec(spec)
+                .when()
+                .get("/products/3")
+                .then()
+                .statusCode(not(404))
+                .body("error", not(equalTo("Internal Server Error")));
+    }
 }
